@@ -5,26 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="bottom"
+    android:gravity="center"
     android:layout_margin="16dp"
-    android:background="@drawable/moyasarlight"
-    tools:context=".activities.SigninActivity">
+    tools:context=".activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/imgMoyaasar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/moyasardark"
+        android:layout_weight="1"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginVertical="30dp"
-        >
+        android:layout_weight="1">
 
         <EditText
             android:id="@+id/edSigninN"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp"
-            android:ems="10"
-            android:hint="Name"
-            android:background="@color/moyasargray"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/custom_mail_icon"
+            android:drawablePadding="12dp"
+            android:hint="Email"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
             android:inputType="textPersonName"
             tools:ignore="TouchTargetSizeCheck"
             />
@@ -32,10 +43,17 @@
         <EditText
             android:id="@+id/edSigninPas"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/moyasargray"
-            android:ems="10"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/custom_key_icon"
+            android:drawablePadding="12dp"
             android:hint="Password"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:ems="10"
             android:inputType="textPassword"
             tools:ignore="TouchTargetSizeCheck"
             />
@@ -46,22 +64,23 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center"
-        android:layout_marginVertical="15dp">
+        android:layout_weight="10">
 
         <Button
             android:id="@+id/signNbtn"
             android:padding="5dp"
             android:layout_margin="8dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/moyasarnavy"
+            android:backgroundTint="@color/moyasarblue"
+            android:textColor="@color/white"
             android:text="Sign in"/>
 
         <Button
             android:id="@+id/registrBtn"
             android:padding="5dp"
             android:layout_margin="8dp"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/moyasarnavy"
             android:text="Register" />

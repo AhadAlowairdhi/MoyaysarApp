@@ -25,8 +25,8 @@
             android:label="Payments"
             android:exported="true" />
         <activity
-            android:name=".activities.SigninActivity"
-            android:label="Sign in"
+            android:name=".activities.MainActivity"
+            android:label="Home"
             android:exported="true" />
         <activity
             android:name=".activities.SignupActivity"

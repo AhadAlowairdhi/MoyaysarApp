@@ -1,12 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/bg_background"
     android:orientation="vertical"
     android:gravity="center"
     tools:context=".activities.PaymentActivity">
+
+    <LinearLayout
+        android:id="@+id/Lin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.5"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:scaleType="fitEnd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/moyasardark" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/Lin2"
@@ -28,15 +43,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_weight="0"
         android:layout_margin="10dp"
         android:gravity="center"
         android:background="@color/moyasargray">
 
         <Button
             android:id="@+id/Signoutbtn"
-            android:layout_width="wrap_content"
+            android:padding="5dp"
+            android:layout_margin="8dp"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
-            android:text="Sign Out"
-            android:textColor="@color/moyasarnavy"/>
+            android:backgroundTint="@color/moyasarblue"
+            android:textColor="@color/white"
+            android:text="Sign Out" />
     </LinearLayout>
 </LinearLayout>

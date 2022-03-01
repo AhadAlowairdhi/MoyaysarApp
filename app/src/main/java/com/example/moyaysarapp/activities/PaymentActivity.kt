@@ -1,6 +1,7 @@
 package com.example.moyaysarapp.activities
 
 import android.content.DialogInterface
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -17,6 +18,7 @@ import com.example.moyaysarapp.classes.PaymentsAdapter
 class PaymentActivity : AppCompatActivity() {
     // declare UI
     lateinit var rvPayments: RecyclerView
+    //lateinit var lsPayment: List<Payments>
     lateinit var lsPayment: List<Payments>
     lateinit var signOut : Button
 
@@ -29,6 +31,11 @@ class PaymentActivity : AppCompatActivity() {
         // init UI
         rvPayments=findViewById(R.id.rvPayments)
         signOut=findViewById(R.id.Signoutbtn)
+        signOut.setOnClickListener {
+                var usrname = Intent(this, MainActivity::class.java)
+                startActivity(usrname)
+            }
+
         lsPayment= listOf()
         updtRC()
 
@@ -37,9 +44,9 @@ class PaymentActivity : AppCompatActivity() {
     // fun to update Recycler View
     fun updtRC(){
         fun updtRC(){
-            lsPayment=MoyasarDatabase.getInstance(applicationContext).PaymentsDao().getAllPayments()
+            lsPayment= MoyasarDatabase.getInstance(applicationContext).PaymentsDao().getAllPayments()
             rvPayments.adapter = PaymentsAdapter(this,lsPayment)
-            rvPayments.layoutManager = LinearLayoutManager(this)
+            rvPayments.layoutManager = GridLayoutManager(this,2)
         }
     }
 

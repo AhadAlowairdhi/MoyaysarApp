@@ -7,11 +7,9 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.example.moyaysarapp.DB.MoyasarDatabase
-import com.example.moyaysarapp.DB.Users
 import com.example.moyaysarapp.R
-import com.example.moyaysarapp.classes.PaymentsAdapter
 
-class SigninActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() {
     // declare UI
     lateinit var edtSignin : EditText
     lateinit var edsigninPass : EditText
@@ -23,7 +21,7 @@ class SigninActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_signin)
+        setContentView(R.layout.main_activity)
         MoyasarDatabase.getInstance(applicationContext) // declare DB
         // init UI
         initSignin()

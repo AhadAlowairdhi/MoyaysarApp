@@ -3,75 +3,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="16dp"
-    android:gravity="bottom"
-    android:background="@drawable/moyasarlight"
+    android:gravity="center"
     tools:context=".activities.SignupActivity"
     android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edtName1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:ems="10"
-        android:background="@color/moyasargray"
-        android:hint="Enter your name"
-        android:textColor="@color/moyasarnavy"
-        android:inputType="textPersonName"
-        tools:ignore="TouchTargetSizeCheck" />
+        <ImageView
+            android:id="@+id/imagMoyasar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/moyasardark" />
 
-    <EditText
-        android:id="@+id/edtMob1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:textColor="@color/moyasarnavy"
-        android:ems="10"
-        android:background="@color/moyasargray"
-        android:hint="Enter your mobile number "
-        android:inputType="textPersonName"
-        tools:ignore="TouchTargetSizeCheck"
-        />
-
-    <EditText
-        android:id="@+id/edtLoc1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:ems="10"
-        android:textColor="@color/moyasarnavy"
-        android:background="@color/moyasargray"
-        android:hint="Enter your locatin"
-        android:inputType="textPersonName"
-        tools:ignore="TouchTargetSizeCheck" />
-
-    <EditText
-        android:id="@+id/edPass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginVertical="5dp"
-        android:textColor="@color/moyasarnavy"
-        android:ems="10"
-        android:background="@color/moyasargray"
-        android:hint="Enter password"
-        android:inputType="textPassword"
-        tools:ignore="TouchTargetSizeCheck" />
 
     <LinearLayout
+        android:id="@+id/Lin2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="20dp">
+        android:layout_weight="1">
+
+        <EditText
+            android:id="@+id/edtName1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/custom_mail_icon"
+            android:drawablePadding="12dp"
+            android:hint="Enter your name"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/edtMob1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/custom_phone_icon"
+            android:drawablePadding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:hint="Enter your mobile number "
+            android:inputType="textPersonName"
+            android:textColor="@color/moyasarnavy"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/edtLoc1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/custom_location_icon"
+            android:drawablePadding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:hint="Enter your locatin"
+            android:inputType="textPersonName"
+            android:textColor="@color/moyasarnavy"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <EditText
+            android:id="@+id/edPass"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/custom_edit_text_rounded"
+            android:drawableStart="@drawable/custom_key_icon"
+            android:drawablePadding="12dp"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:ems="10"
+            android:hint="Enter password"
+            android:inputType="textPassword"
+            android:textColor="@color/moyasarnavy"
+            tools:ignore="TouchTargetSizeCheck" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Lin3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="10"
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnSub"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textColor="@color/moyasarnavy"
-            android:text="Submit" />
+            android:text="Submit"
+            android:textColor="@color/moyasarnavy" />
     </LinearLayout>
 
 </LinearLayout>
