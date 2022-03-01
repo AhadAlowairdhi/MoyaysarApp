@@ -19,7 +19,7 @@ class PaymentActivity : AppCompatActivity() {
     // declare UI
     lateinit var rvPayments: RecyclerView
     //lateinit var lsPayment: List<Payments>
-    lateinit var lsPayment: List<Payments>
+    lateinit var lsPayment: ArrayList<Payments>
     lateinit var signOut : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +34,11 @@ class PaymentActivity : AppCompatActivity() {
         signOut.setOnClickListener {
                 var usrname = Intent(this, MainActivity::class.java)
                 startActivity(usrname)
+                finish()
             }
 
-        lsPayment= listOf()
+        lsPayment= arrayListOf()
+        lsPayment.add(Payments(0,5))
         updtRC()
 
     } // End of onCreate fun
@@ -44,7 +46,7 @@ class PaymentActivity : AppCompatActivity() {
     // fun to update Recycler View
     fun updtRC(){
         fun updtRC(){
-            lsPayment= MoyasarDatabase.getInstance(applicationContext).PaymentsDao().getAllPayments()
+           // lsPayment= MoyasarDatabase.getInstance(applicationContext).PaymentsDao().getAllPayments()
             rvPayments.adapter = PaymentsAdapter(this,lsPayment)
             rvPayments.layoutManager = GridLayoutManager(this,2)
         }

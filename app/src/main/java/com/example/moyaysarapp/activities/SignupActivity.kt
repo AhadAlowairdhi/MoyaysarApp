@@ -34,6 +34,7 @@ class SignupActivity : AppCompatActivity() {
 
         submtBtn.setOnClickListener {
             submitdata()
+            Log.e("Tag","Submitted not work")
         } // End of submit button listener
 
         } // End of onCreate func
@@ -65,12 +66,12 @@ class SignupActivity : AppCompatActivity() {
                 upasswrd.isNotEmpty()){
 
                 Toast.makeText(applicationContext, "data submitted successfully! $save", Toast.LENGTH_LONG).show()
-            }
 
-            // after save data in DB go to Payment activity
-            var intent = Intent(this, PaymentActivity::class.java)
-            startActivity(intent)
-            finish() // to avoid back button work
+                // after save data in DB go to Payment activity
+                var intent = Intent(this, PaymentActivity::class.java)
+                startActivity(intent)
+                finish() // to avoid back button work
+            }
 
         }catch (e: Exception){
             Toast.makeText(applicationContext, "data not submitted!", Toast.LENGTH_LONG).show()
