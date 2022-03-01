@@ -66,7 +66,7 @@ class SigninActivity : AppCompatActivity() {
 
     // move to Payment activity
     fun moveto(){
-        var intent = Intent(this, PaymentsAdapter::class.java)
+        var intent = Intent(this, PaymentActivity::class.java)
         startActivity(intent)
     }
 

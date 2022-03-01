@@ -3,6 +3,7 @@ package com.example.moyaysarapp.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -30,6 +31,7 @@ class SignupActivity : AppCompatActivity() {
         MoyasarDatabase.getInstance(applicationContext) // declare DB
         // init UI
         initsignUp()
+        Log.e("Tag","signUp activity")
 
         submtBtn.setOnClickListener {
             val save = Users(0,username,upasswrd)
@@ -50,7 +52,6 @@ class SignupActivity : AppCompatActivity() {
 
     // submitted fun
     fun submitdata(){
-
         try {
             username=edtName1.text.toString()
             umobile=edtMobnum.text.toString()
@@ -69,7 +70,7 @@ class SignupActivity : AppCompatActivity() {
             }
 
             // after save data in DB go to Payment activity
-            var intent = Intent(this, PaymentsAdapter::class.java)
+            var intent = Intent(this, PaymentActivity::class.java)
             startActivity(intent)
             finish() // to avoid back button work
 

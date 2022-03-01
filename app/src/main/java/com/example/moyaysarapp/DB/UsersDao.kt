@@ -2,6 +2,7 @@ package com.example.moyaysarapp.DB
 import androidx.lifecycle.LiveData
 import androidx.room.*
 
+@Dao
 interface UsersDao {
     @Query("SELECT * FROM Users ORDER BY id ")
     fun getAllUsers(): List<Users>

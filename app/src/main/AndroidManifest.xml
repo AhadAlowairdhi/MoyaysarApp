@@ -12,21 +12,25 @@
         android:theme="@style/Theme.MoyaysarApp">
         <activity
             android:name=".activities.SplashScreen"
-            android:exported="true" />
+            android:label="Moyasar"
+            android:exported="true">
+            <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+        </activity>
         <activity
             android:name=".activities.PaymentActivity"
             android:label="Payments"
             android:exported="true" />
         <activity
             android:name=".activities.SigninActivity"
+            android:label="Sign in"
             android:exported="true" />
-              <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-              </intent-filter>
         <activity
             android:name=".activities.SignupActivity"
+            android:label="Sign up"
             android:exported="true">
         </activity>
     </application>
