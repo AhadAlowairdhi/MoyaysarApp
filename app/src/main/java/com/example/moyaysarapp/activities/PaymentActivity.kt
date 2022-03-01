@@ -39,18 +39,19 @@ class PaymentActivity : AppCompatActivity() {
 
         lsPayment= arrayListOf()
         lsPayment.add(Payments(0,5))
+        lsPayment.add(Payments(0,3))
+        lsPayment.add(Payments(0,6))
+        lsPayment.add(Payments(0,2))
         updtRC()
 
     } // End of onCreate fun
 
     // fun to update Recycler View
     fun updtRC(){
-        fun updtRC(){
            // lsPayment= MoyasarDatabase.getInstance(applicationContext).PaymentsDao().getAllPayments()
             rvPayments.adapter = PaymentsAdapter(this,lsPayment)
             rvPayments.layoutManager = GridLayoutManager(this,2)
         }
-    }
 
     // fun to delete payment
     fun delPayment(payment : Payments){
