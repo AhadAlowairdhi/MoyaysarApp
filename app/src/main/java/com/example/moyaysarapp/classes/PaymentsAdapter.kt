@@ -20,11 +20,6 @@ class PaymentsAdapter(val activity: PaymentActivity , var paymentsList: List<Pay
             val aPayment = paymentsList[position]
 
             holder.binding.apply {
-               // tvNote.text = aPayment
-//                paymentImg.setOnClickListener{
-//                    activity.DialogEdit(aPayment)
-//                }
-
                 delete.setOnClickListener{
                     activity.DialogDel(aPayment)
                 }

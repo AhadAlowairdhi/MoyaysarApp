@@ -5,8 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:gravity="bottom"
     android:layout_margin="16dp"
-    android:background="@color/white"
+    android:background="@drawable/moyasarlight"
     tools:context=".activities.SigninActivity">
 
     <LinearLayout
@@ -23,6 +24,7 @@
             android:layout_marginBottom="5dp"
             android:ems="10"
             android:hint="Name"
+            android:background="@color/moyasargray"
             android:inputType="textPersonName"
             tools:ignore="TouchTargetSizeCheck"
             />
@@ -31,6 +33,7 @@
             android:id="@+id/edSigninPas"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/moyasargray"
             android:ems="10"
             android:hint="Password"
             android:inputType="textPassword"
@@ -39,18 +42,20 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginVertical="15dp"
-        android:gravity="center">
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_marginVertical="15dp">
 
         <Button
             android:id="@+id/signNbtn"
             android:padding="5dp"
+            android:layout_margin="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign in" />
+            android:textColor="@color/moyasarnavy"
+            android:text="Sign in"/>
 
         <Button
             android:id="@+id/registrBtn"
@@ -58,6 +63,7 @@
             android:layout_margin="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/moyasarnavy"
             android:text="Register" />
     </LinearLayout>
 

@@ -3,8 +3,10 @@ package com.example.moyaysarapp.activities
 import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.moyaysarapp.DB.MoyasarDatabase
@@ -13,8 +15,10 @@ import com.example.moyaysarapp.R
 import com.example.moyaysarapp.classes.PaymentsAdapter
 
 class PaymentActivity : AppCompatActivity() {
+    // declare UI
     lateinit var rvPayments: RecyclerView
     lateinit var lsPayment: List<Payments>
+    lateinit var signOut : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,24 +26,29 @@ class PaymentActivity : AppCompatActivity() {
 
         MoyasarDatabase.getInstance(applicationContext)
 
+        // init UI
         rvPayments=findViewById(R.id.rvPayments)
+        signOut=findViewById(R.id.Signoutbtn)
         lsPayment= listOf()
         updtRC()
+
     } // End of onCreate func
 
+    // fun to update Recycler View
     fun updtRC(){
         lsPayment=MoyasarDatabase.getInstance(applicationContext).PaymentsDao().getAllPayments()
         rvPayments.adapter = PaymentsAdapter(this,lsPayment)
-        rvPayments.layoutManager = LinearLayoutManager(this)
+        rvPayments.layoutManager = GridLayoutManager(this,2)
     }
 
+    // fun to delete payment
     fun delPayment(payment : Payments){
         MoyasarDatabase.getInstance(applicationContext).PaymentsDao().deletePayment(payment)
         updtRC()
         Toast.makeText(this, "deleted payment successfully!", Toast.LENGTH_SHORT).show()
     }
 
-
+    // alert dialog to confirm delete
     fun DialogDel(payment : Payments ){
         val dialogBuilder = AlertDialog.Builder(this)
         dialogBuilder.setMessage("Are you sure?")

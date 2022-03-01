@@ -8,5 +8,8 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="moyasarblue">#2980B9</color>
-
+    <color name="moyasargreen">#D21BBC9B</color>
+    <color name="moyasargray">#E9ECF3</color>
+    <color name="moyasarnavy">#1A344E</color>
+    <color name="moyasarlightblue">#832980B9</color>
 </resources>

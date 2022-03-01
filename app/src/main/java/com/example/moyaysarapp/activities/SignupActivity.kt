@@ -13,6 +13,7 @@ import com.example.moyaysarapp.classes.PaymentsAdapter
 import java.lang.Exception
 
 class SignupActivity : AppCompatActivity() {
+    // declare UI
     lateinit var edtName1 : EditText
     lateinit var edtMobnum : EditText
     lateinit var edtLoc : EditText
@@ -26,15 +27,15 @@ class SignupActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_signup)
-        MoyasarDatabase.getInstance(applicationContext)
+        MoyasarDatabase.getInstance(applicationContext) // declare DB
         // init UI
         initsignUp()
 
         submtBtn.setOnClickListener {
             val save = Users(0,username,upasswrd)
-            MoyasarDatabase.getInstance(applicationContext).UsersDao().insertUser(save)
+            MoyasarDatabase.getInstance(applicationContext).UsersDao().insertUser(save) // save data to DB
 
-        }
+        } // End of submit button listener
             submitdata()
         } // End of onCreate func
 
@@ -47,7 +48,7 @@ class SignupActivity : AppCompatActivity() {
         submtBtn=findViewById(R.id.btnSub)
     }
 
-    // submited Function
+    // submitted fun
     fun submitdata(){
 
         try {
