@@ -31,14 +31,11 @@ class SignupActivity : AppCompatActivity() {
         MoyasarDatabase.getInstance(applicationContext) // declare DB
         // init UI
         initsignUp()
-        Log.e("Tag","signUp activity")
 
         submtBtn.setOnClickListener {
-            val save = Users(0,username,upasswrd)
-            MoyasarDatabase.getInstance(applicationContext).UsersDao().insertUser(save) // save data to DB
-
-        } // End of submit button listener
             submitdata()
+        } // End of submit button listener
+
         } // End of onCreate func
 
     // init Function
@@ -57,8 +54,9 @@ class SignupActivity : AppCompatActivity() {
             umobile=edtMobnum.text.toString()
             ulocation=edtLoc.text.toString()
             upasswrd=edPassword.text.toString()
-            // save data in DB
-            var svdata = MoyasarDatabase.getInstance(applicationContext).UsersDao().getAllUsers()
+            // save data to DB
+            val save = Users(0,username,upasswrd)
+            MoyasarDatabase.getInstance(applicationContext).UsersDao().insertUser(save)
 
             // Check if fields is empty or not
             if (username.isNotEmpty() &&
@@ -66,7 +64,7 @@ class SignupActivity : AppCompatActivity() {
                 ulocation.isNotEmpty() &&
                 upasswrd.isNotEmpty()){
 
-                Toast.makeText(applicationContext, "data submitted successfully! "+ svdata, Toast.LENGTH_LONG).show()
+                Toast.makeText(applicationContext, "data submitted successfully! $save", Toast.LENGTH_LONG).show()
             }
 
             // after save data in DB go to Payment activity

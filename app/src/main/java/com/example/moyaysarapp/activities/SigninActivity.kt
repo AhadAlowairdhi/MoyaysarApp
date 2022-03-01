@@ -19,7 +19,7 @@ class SigninActivity : AppCompatActivity() {
     lateinit var registrBtn : Button
     var usrnam = ""
     var paswrd = ""
-    var valid = ""
+    var valid = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,12 +32,16 @@ class SigninActivity : AppCompatActivity() {
             usrnam=edtSignin.text.toString()
             paswrd=edsigninPass.text.toString()
 
-            val save = Users(0,usrnam,paswrd)
-            MoyasarDatabase.getInstance(applicationContext).UsersDao().insertUser(save) // save data to DB
+            val users = MoyasarDatabase.getInstance(applicationContext).UsersDao().getAllUsers() // save data to DB
 
             // check if fields is empty or not
             if (usrnam.isNotEmpty() && paswrd.isNotEmpty()){
-                if (valid == paswrd){
+                for (user in users) {
+                    if (usrnam == user.username && paswrd == user.password) {
+                        valid = true
+                    }
+                }
+                if (valid){
                     Toast.makeText(this, "sign in success", Toast.LENGTH_LONG).show()
                     moveto()
 
@@ -47,7 +51,9 @@ class SigninActivity : AppCompatActivity() {
             }else{
                 Toast.makeText(this, "username & password must not empty", Toast.LENGTH_LONG).show()
             }
-        } // End of sign in button listener
+
+        }
+         // End of sign in button listener
 
         // move to Register Activity
         registrBtn.setOnClickListener {
