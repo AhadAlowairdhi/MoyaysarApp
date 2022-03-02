@@ -56,6 +56,7 @@ class PaymentActivity : AppCompatActivity() {
     // fun to delete payment
     fun delPayment(payment : Payments){
         MoyasarDatabase.getInstance(applicationContext).PaymentsDao().deletePayment(payment)
+        lsPayment.remove(payment)
         updtRC()
         Toast.makeText(this, "deleted payment successfully!", Toast.LENGTH_SHORT).show()
     }
